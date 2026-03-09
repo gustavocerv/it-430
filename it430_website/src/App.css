@@ -1,0 +1,155 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+/* Page containers */
+.home,
+.families,
+.activities,
+.tasks,
+.goals,
+.priorities {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: #000; /* default page background */
+  color: #fff;
+}
+
+/* ========================
+   Navbar / Sidebar Styles
+   ======================== */
+
+/* Top navbar (hamburger container) */
+.navbar {
+  background: transparent; /* let header gradient show */
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative; /* for absolute positioning inside header */
+  z-index: 100;
+}
+
+/* Hamburger icon */
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: #000; /* black icon */
+  cursor: pointer;
+}
+
+/* Sidebar menu */
+.nav-menu {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 450ms;
+  z-index: 200;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+/* Sidebar menu items list */
+.nav-menu-items {
+  width: 100%;
+  padding: 0;
+}
+
+/* Close icon container */
+.navbar-toggle {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: transparent;
+}
+
+/* Close icon color */
+.navbar-toggle .menu-bars svg {
+  color: #000; /* black X icon */
+  font-size: 2rem;
+}
+
+/* Sidebar list items */
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 16px; /* closer spacing */
+  list-style: none;
+  height: 50px;
+}
+
+/* Sidebar links */
+.nav-text a {
+  text-decoration: none;
+  color: #000; /* black text */
+  font-size: 20px; /* slightly larger font */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+/* Hover effect */
+.nav-text a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* subtle black overlay */
+  color: #000;
+}
+
+/* Icon spacing inside sidebar items */
+span {
+  margin-left: 16px;
+}
+
+/* ========================
+   Header Hero Section
+   ======================== */
+
+/* Header Hero Section */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #fff; /* default color for subtitle */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Header title */
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #000; /* title is now black */
+}
+
+/* Header subtitle */
+header p {
+  font-size: 1.3rem;
+  margin-top: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9); /* subtitle stays white */
+}
