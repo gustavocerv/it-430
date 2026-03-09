@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -23,18 +26,18 @@ jobs:
       # 3. Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./it430_website   # correct folder
+        working-directory: ./it430_website
 
       # 4. Build React app
       - name: Build app
         run: npm run build
-        working-directory: ./it430_website   # same folder
+        working-directory: ./it430_website
 
       # 5. Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./it430_website/build   # build folder relative to repo root
-          publish_branch: gh-pages             # branch to deploy
-          force_orphan: true                   # create branch if it doesn't exist
+          publish_dir: ./it430_website/build
+          publish_branch: gh-pages
+          force_orphan: true
