@@ -1,4 +1,4 @@
-#!/Users/gustavo/it-430/it430_api/venv/bin/python3.12
+#!/home/ubuntu/it-430/it430_api/venv/bin/python3
 
 import sys
 import json
