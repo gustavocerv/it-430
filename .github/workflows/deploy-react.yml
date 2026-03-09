@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger deployment on push to main branch
+      - main  # Trigger deployment when pushing to main
 
 jobs:
   build-and-deploy:
@@ -20,17 +20,25 @@ jobs:
         with:
           node-version: '18'
 
-      # 3. Install dependencies
+      # 3. Navigate to your website folder
+      - name: Navigate to it430_website
+        run: cd it430_website
+
+      # 4. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd it430_website
+          npm install
 
-      # 4. Build React app
+      # 5. Build React app
       - name: Build app
-        run: npm run build
+        run: |
+          cd it430_website
+          npm run build
 
-      # 5. Deploy to GitHub Pages
-      - name: Deploy
+      # 6. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./it430_website/build
