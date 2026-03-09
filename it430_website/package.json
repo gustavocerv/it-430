@@ -2,6 +2,7 @@
   "name": "react-sidebar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gustavocerv.github.io/it-430",  // <-- ADD THIS
   "dependencies": {
     "@fullcalendar/common": "^5.11.5",
     "@fullcalendar/daygrid": "^6.1.19",
